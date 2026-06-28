@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<link rel="icon" type="image/png" href="logo.png">
+</div>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>श्री राम कृष्ण गौशाला सिहोर</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Georgia','Times New Roman',serif;background:#fdf8f0;color:#2c1a0e;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,4,0,0.95);backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;border-bottom:1px solid rgba(200,168,75,0.35);}
+.logo-area{display:flex;align-items:center;gap:10px;}
+.logo-title{color:#c8a84b;font-weight:700;font-size:20px;letter-spacing:2px;}
+.logo-sub{color:#e8d5a0;font-size:9px;letter-spacing:3px;text-transform:uppercase;}
+.nav-links{display:flex;gap:2rem;}
+.nav-links a{color:#e8d5a0;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:4px 0;border-bottom:1px solid transparent;transition:all 0.2s;}
+.nav-links a:hover{border-bottom-color:#c8a84b;color:#c8a84b;}
+.btn-gold{background:#c8a84b;color:#2c1a0e;border:none;padding:8px 22px;border-radius:20px;cursor:pointer;font-weight:700;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;display:inline-block;}
+.hero{position:relative;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,2,0,0.2) 0%,rgba(5,2,0,0.1) 35%,rgba(10,4,0,0.9) 100%);}
+.hero-border{position:absolute;inset:16px;border:1px solid rgba(200,168,75,0.3);pointer-events:none;z-index:2;}
+.hero-content{position:relative;z-index:10;padding:2rem 4rem 5rem;max-width:660px;}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,168,75,0.15);border:1px solid rgba(200,168,75,0.4);border-radius:20px;padding:6px 18px;margin-bottom:20px;}
+.badge span{color:#c8a84b;font-size:11px;letter-spacing:2px;text-transform:uppercase;}
+h1.hero-title{font-size:clamp(2.4rem,4.5vw,4rem);font-weight:400;color:#fdf8f0;line-height:1.18;margin-bottom:0.8rem;letter-spacing:1px;text-shadow:0 2px 24px rgba(0,0,0,0.9);}
+h1.hero-title em{color:#c8a84b;font-style:normal;}
+.hero-tagline{color:#c8a84b;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
+.hero-desc{color:#d4b896;font-size:15px;line-height:1.85;max-width:480px;margin-bottom:2.2rem;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{background:#c8a84b;color:#2c1a0e;border:none;padding:14px 34px;cursor:pointer;font-weight:700;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;display:inline-block;border-radius:2px;}
+.btn-outline{background:transparent;color:#e8d5a0;border:1px solid rgba(200,168,75,0.5);padding:14px 34px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;display:inline-block;border-radius:2px;transition:all 0.2s;}
+.btn-outline:hover{background:rgba(200,168,75,0.12);}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(9px);}}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:#c8a84b;font-size:10px;letter-spacing:2px;text-align:center;animation:bounce 2s infinite;z-index:10;}
+.stats-bar{background:#0d0600;padding:2.8rem 2rem;border-top:1px solid rgba(200,168,75,0.3);border-bottom:1px solid rgba(200,168,75,0.3);}
+.stats-grid{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center;}
+.stat-val{font-size:2.2rem;color:#c8a84b;font-weight:300;line-height:1;}
+.stat-unit{font-size:0.85rem;color:#8a6a40;margin-left:4px;}
+.stat-label{color:#5a3e2b;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;margin-top:6px;}
+.about{padding:5.5rem 2rem;max-width:1100px;margin:0 auto;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.section-eye{color:#c8a84b;font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:0.8rem;}
+h2.section-title{font-size:2rem;font-weight:400;line-height:1.3;margin-bottom:1.3rem;}
+h2.section-title small{color:#8a6a40;font-size:0.95rem;display:block;margin-top:5px;}
+.about-text{color:#5a3e2b;line-height:1.9;font-size:15px;margin-bottom:1rem;}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:1.2rem;}
+.tag{background:rgba(200,168,75,0.1);border:1px solid rgba(200,168,75,0.3);color:#8a6a40;padding:5px 16px;border-radius:20px;font-size:11px;letter-spacing:1px;}
+.about-img-wrap{position:relative;}
+.about-img-wrap img{width:100%;border-radius:6px;border:2px solid rgba(200,168,75,0.25);}
+.img-badge{position:absolute;bottom:-16px;left:-16px;background:#c8a84b;color:#2c1a0e;padding:14px 22px;border-radius:4px;}
+.img-badge-num{font-size:1.9rem;font-weight:700;line-height:1;}
+.img-badge-txt{font-size:10px;letter-spacing:2px;text-transform:uppercase;}
+.gallery-sec{padding:5rem 2rem;max-width:1100px;margin:0 auto;}
+.gallery-featured{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.5rem;}
+.gallery-featured img{width:100%;height:420px;object-fit:cover;border-radius:6px;border:2px solid rgba(200,168,75,0.2);}
+.gallery-caption{text-align:center;color:#8a6a40;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;margin-top:8px;}
+.gallery-sub{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;}
+.gallery-sub img{width:100%;height:180px;object-fit:cover;border-radius:4px;filter:sepia(10%);}
+.cows-sec{background:linear-gradient(180deg,#0d0600,#180900);padding:5.5rem 2rem;}
+.cows-inner{max-width:900px;margin:0 auto;text-align:center;}
+.cow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.5rem;}
+.cow-card{background:rgba(200,168,75,0.07);border:1px solid rgba(200,168,75,0.2);border-radius:8px;padding:2.2rem 1.4rem;transition:all 0.25s;}
+.cow-card:hover{background:rgba(200,168,75,0.15);transform:translateY(-5px);}
+.cow-icon{font-size:2.8rem;margin-bottom:12px;}
+.cow-count{font-size:2.4rem;color:#c8a84b;font-weight:300;}
+.cow-name{color:#e8d5a0;font-size:14px;margin:6px 0 4px;}
+.cow-sub{color:#5a3e2b;font-size:12px;letter-spacing:1px;}
+.donate-sec{background:linear-gradient(135deg,#0a0300,#1c0a00,#0a0300);padding:6rem 2rem;border-top:1px solid rgba(200,168,75,0.2);border-bottom:1px solid rgba(200,168,75,0.2);}
+.donate-inner{max-width:900px;margin:0 auto;text-align:center;}
+.donate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin:2.5rem 0;}
+.donate-card{background:rgba(200,168,75,0.07);border:1px solid rgba(200,168,75,0.2);border-radius:8px;padding:1.8rem 1rem;cursor:pointer;transition:all 0.2s;}
+.donate-card:hover{background:rgba(200,168,75,0.18);transform:translateY(-4px);}
+.donate-amt{font-size:1.6rem;color:#c8a84b;font-weight:300;}
+.donate-label{color:#e8d5a0;font-size:13px;font-weight:600;margin:8px 0 4px;}
+.donate-desc{color:#5a3e2b;font-size:11px;line-height:1.5;}
+.bank-box{background:rgba(200,168,75,0.08);border:1px solid rgba(200,168,75,0.25);border-radius:8px;padding:2rem;text-align:left;max-width:500px;margin:0 auto;}
+.bank-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(200,168,75,0.1);font-size:14px;}
+.bank-key{color:#8a6a40;}
+.bank-val{color:#e8d5a0;font-family:monospace;}
+.contact-sec{padding:5.5rem 2rem;max-width:960px;margin:0 auto;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;}
+.contact-item{display:flex;gap:16px;margin-bottom:1.6rem;}
+.contact-icon{font-size:1.5rem;}
+.contact-lbl{color:#c8a84b;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;}
+.contact-val{color:#5a3e2b;font-size:15px;}
+.quote-box{background:rgba(200,168,75,0.05);border:1px solid rgba(200,168,75,0.2);border-radius:8px;padding:3rem;text-align:center;}
+footer{background:#060200;border-top:1px solid rgba(200,168,75,0.2);padding:3rem;text-align:center;}
+@media(max-width:768px){
+  .about-grid,.contact-grid,.gallery-featured,.stats-grid,.cow-grid,.donate-grid{grid-template-columns:1fr!important;}
+  .nav-links{display:none;}
+  .hero-content{padding:2rem 1.5rem 4rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo-area">
+    <!-- <svg width="38" height="38" viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" stroke="#c8a84b" stroke-width="1.5" fill="none"/><text x="50" y="66" text-anchor="middle" font-size="52" fill="#c8a84b" font-family="serif">ॐ</text></svg> -->
+     <img src="logo.png" alt="Gaushala Logo"style="width:38px; height:38px; border-radius:50%; object-fit:cover;">
+    <div><div class="logo-title">श्री राम कृष्ण गौशाला सिहोर</div><div class="logo-sub">Kanina · Mahendragarh</div></div>
+  </div>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#cows">Cows</a>
+    <a href="#donate">Donate</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#donate" class="btn-gold">🙏 Donate</a>
+</nav>
+
+<section class="hero" id="home">
+ 
+  <img class="hero-bg" src="image2.png">
+   <div class="hero-overlay"></div>
+
+  <div class="hero-border"></div>
+  <div class="hero-content">
+    <!-- <div class="badge"><span>🪷 Gram Panchayat · Sihor · Est. 2026</span></div> -->
+    <h1 class="hero-title">गौ रक्षा,<br><em>राष्ट्र रक्षा।</em></h1>
+    <div class="hero-tagline">Where there is a cow, there is the divine</div>
+    <p class="hero-desc">A sacred refuge for Gau Mata in the heart of Sihore village, Kanina, Mahendragarh — serving through compassion, devotion, and gau seva since 2026.</p>
+    <div class="hero-btns">
+      <a href="#donate" class="btn-primary">🙏 Donate Now</a>
+      <a href="#about" class="btn-outline">Our Mission →</a>
+    </div>
+  </div>
+  <div class="scroll-hint">↓<br><span style="font-size:9px;letter-spacing:2px;">SCROLL</span></div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div><div class="stat-val">5<span class="stat-unit">Acres</span></div><div class="stat-label">Sacred Land</div></div>
+    <div><div class="stat-val">3+<span class="stat-unit">Cows</span></div><div class="stat-label">Under Care</div></div>
+    <div><div class="stat-val">2026</div><div class="stat-label">Established</div></div>
+    <div><div class="stat-val">∞</div><div class="stat-label">Gau Seva</div></div>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="about-grid">
+    <div>
+      <div class="section-eye">— Our Story</div>
+      <h2 class="section-title">गौ सेवा परमो धर्म:<small>Cow Service is the Highest Dharma</small></h2>
+      <p class="about-text">Established in 2026 and operated by the Gram Panchayat of Sihor, our Gaushala was born from a community's devotion to Gau Mata — the sacred mother cow revered since the age of Krishna.</p>
+      <p class="about-text">Spread across 5 fertile acres in Sihor, Kanina, Mahendragarh, Haryana — we rescue, rehabilitate, and care for Desi cows with love, dignity, and spiritual reverence.</p>
+      <div class="tags">
+        <span class="tag">Rescue &amp; Shelter</span>
+        <!-- <span class="tag">Organic Farming</span> -->
+        <span class="tag">Community Seva</span>
+        <span class="tag">Panchayat Governed</span>
+      </div>
+    </div>
+    <div class="about-img-wrap">
+      <img src="image1.png" alt="Image 1">
+       <!-- <div class="img-badge"><div class="img-badge-num">5</div><div class="img-badge-txt">Acres · Sacred</div></div> -->
+    </div>
+  </div>
+</section>
+
+<section class="gallery-sec" id="gallery">
+  <div style="text-align:center;">
+    <div class="section-eye">— Divine Gallery</div>
+    <h2 class="section-title" style="margin-top:0.4rem;">Our Sacred World</h2>
+  </div>
+  <div class="gallery-featured">
+    <div>
+      <img src="image2.png" alt="Image 2">
+       <div class="gallery-caption">🦚 Lord Krishna with Gau Mata — Vrindavan</div>
+    </div>
+    <div>
+      <img src="image1.png" alt="Image 1">
+       <div class="gallery-caption">🎨 मौशाला — Sacred Folk Art</div>
+    </div>
+  </div>
+
+</section>
+
+<section class="cows-sec" id="cows">
+  <div class="cows-inner">
+    <div class="section-eye" style="color:#c8a84b;">— Our Gau Mata</div>
+    <h2 class="section-title" style="color:#fdf8f0;margin-top:0.5rem;">Total Capacity</h2>
+    <div class="cow-grid">
+      <div class="cow-card"><div class="cow-icon">🐄</div><div class="cow-count">200+</div><div class="cow-name">Desi Cows</div><div class="cow-sub">Gir · Sahiwal breeds</div></div>
+      <div class="cow-card"><div class="cow-icon">🐂</div><div class="cow-count">100+</div><div class="cow-name">Male Cows</div><div class="cow-sub">Bulls under care</div></div>
+          <div class="cow-card"><div class="cow-icon">🐮</div><div class="cow-count">200+</div><div class="cow-name">Growing</div><div class="cow-sub">More arriving soon</div></div>
+       <!-- 
+   
+       -->
+    </div>
+    <p style="color:#5a3e2b;margin-top:2rem;font-size:14px;line-height:1.8;max-width:500px;margin-left:auto;margin-right:auto;">With your support, we will grow this refuge into a home for hundreds of Desi Gau Mata. 🙏</p>
+  </div>
+</section>
+
+<section class="donate-sec" id="donate">
+  <div class="donate-inner">
+    <!-- <svg width="48" height="48" viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" stroke="#c8a84b" stroke-width="1.5" fill="none"/><text x="50" y="66" text-anchor="middle" font-size="52" fill="#c8a84b" font-family="serif">ॐ</text></svg> -->
+   <img src="logo.png" alt="Gaushala Logo" style="width:150px; height:150px; border-radius:50%; object-fit:cover;">
+    <h2 class="section-title" style="color:#fdf8f0;margin:1.2rem 0 0.4rem;">Become a Gau Sevak</h2>
+    <p style="color:#8a6a40;font-size:15px;">Every rupee goes directly to feeding, caring for, and protecting our sacred cows.</p>
+    <div class="donate-grid">
+      <!-- <div class="donate-card"><div class="donate-amt">₹XXXX</div><div class="donate-label">Daily Feed</div><div class="donate-desc">Feeds one cow for a day</div></div>
+      <div class="donate-card"><div class="donate-amt">₹XXXX</div><div class="donate-label">Monthly Care</div><div class="donate-desc">Full monthly care of one cow</div></div>
+      <div class="donate-card"><div class="donate-amt">₹XXXX</div><div class="donate-label">Gau Daan</div><div class="donate-desc">Sponsor a cow for a year</div></div>
+      <div class="donate-card"><div class="donate-amt">₹XXXX</div><div class="donate-label">Custom Seva</div><div class="donate-desc">Any amount is sacred seva</div></div> -->
+    </div>
+    <div class="bank-box">
+      <div class="section-eye" style="margin-bottom:1rem;">Donation Details</div>
+      <!-- <div class="bank-row"><span class="bank-key">Bank Name</span><span class="bank-val">XXXXX</span></div>
+      <div class="bank-row"><span class="bank-key">Account No.</span><span class="bank-val">XXXXXXX</span></div>
+      <div class="bank-row"><span class="bank-key">IFSC Code</span><span class="bank-val">XXXXXXX</span></div>
+      <div class="bank-row" style="border:none;"><span class="bank-key">UPI / WhatsApp Pay</span><span class="bank-val">XXXXX</span></div>-->
+      <div style="padding:20px; text-align:center; background:#fff8e8; border:1px solid #e6d3a3; border-radius:10px; color:#7a5a1c; font-weight:600;">
+    🚧 Donation facility is currently <strong>Offline</strong>.<br><br>
+    Please contact the Gaushala directly for donation details.
+    </div>  
+  </div>
+</section>
+
+<section class="contact-sec" id="contact">
+  <div style="text-align:center;margin-bottom:3rem;">
+    <div class="section-eye">— Find Us</div>
+    <h2 class="section-title" style="margin-top:0.4rem;">Contact &amp; Location</h2>
+  </div>
+  <div class="contact-grid">
+    <div>
+      <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-lbl">Address</div><div class="contact-val">Village Sihor, Kanina, Mahendragarh, Haryana</div></div></div>
+      <div class="contact-item"><div class="contact-icon">📞</div><div><div class="contact-lbl">Phone</div><div class="contact-val">9876377832</div></div></div>
+      <div class="contact-item"><div class="contact-icon">💬</div><div><div class="contact-lbl">WhatsApp</div><div class="contact-val">9876377832</div></div></div>
+      <div class="contact-item"><div class="contact-icon">✉️</div><div><div class="contact-lbl">Email</div><div class="contact-val">shriramkrishangaushalasihore@gmail.com</div></div></div>
+      <a href="https://maps.apple.com/frame?center=28.370774,76.288884&distance=332.615628&map=hybrid&span=0.001591,0.002072" target="_blank" class="btn-primary" style="font-size:12px;margin-top:0.5rem;display:inline-block;">🧭 View on Map →</a>
+    </div>
+    <div class="quote-box">
+      <!-- <div style="font-size:3.5rem;margin-bottom:1rem;">🙏</div> -->
+       <img src="logo.png" alt="Gaushala Logo" style="width:100px; height:100px; border-radius:50%; object-fit:cover;">
+      <!-- <div style="color:#c8a84b;font-size:1.3rem;margin-bottom:0.8rem;">गाय हमारी माता है</div> -->
+      <div style="color:#8a6a40;line-height:1.8;font-size:14px;font-style:italic;">"How much pious credit we get by visiting holy places, offering food for brahmanas, fasting, chanting of mantras by doing many yajnas that much pious credit we can get simply by offering a blade of grass to a cow."</div>
+      <div style="color:#c8a84b;font-size:10px;letter-spacing:2px;margin-top:1rem;">— Mahabharata</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <!-- <svg width="42" height="42" viewBox="0 0 100 100"><circle cx="50" cy="50" r="47" stroke="#c8a84b" stroke-width="1.5" fill="none"/><text x="50" y="66" text-anchor="middle" font-size="52" fill="#c8a84b" font-family="serif">ॐ</text></svg> -->
+   <img src="logo.png" alt="Gaushala Logo" style="width:38px; height:38px; border-radius:50%; object-fit:cover;">
+  <div style="color:#c8a84b;font-size:16px;letter-spacing:3px;margin:0.8rem 0 5px;">गौशाला</div>
+  <div style="color:#c8a84b;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">Sihor · Kanina · Mahendragarh · Haryana</div>
+  <div style="color:#c8a84b;font-size:11px;">Operated by Gram Panchayat · Est. 2026 · गौ सेवा परमो धर्म:</div>
+</footer>
+
+</body>
+</html>
